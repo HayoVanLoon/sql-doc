@@ -199,7 +199,7 @@ def markdown_index(current: Section, level: int = 0) -> str:
         ref = DOCPATH_SPLIT_TOKEN.join(section.path())
         for i in range(level * 2):
             buf.write(' ')
-        buf.write(f'- [{name}]({ref})\n')
+        buf.write(f'- [{name}](#{ref})\n')
         buf.write(markdown_index(section, level + 1))
     return buf.getvalue()
 

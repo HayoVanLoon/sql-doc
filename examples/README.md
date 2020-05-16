@@ -1,11 +1,11 @@
 # Query Documentation
 - [general](ROOT)
-- [free](free)
-- [section1](section1)
-- [section2](section2)
-  - [section2/subsection1](section2/subsection1)
-  - [section2/subsection2](section2/subsection2)
-- [section3](section3)
+- [free](#free)
+- [section1](#section1)
+- [section2](#section2)
+  - [section2/subsection1](#section2/subsection1)
+  - [section2/subsection2](#section2/subsection2)
+- [section3](#section3)
 
 <a name="ROOT"></a>
 ###### root.sql
