@@ -372,6 +372,7 @@ if __name__ == '__main__':
         default=''
     )
     # TODO(hvl): add flag for allowing symlink traversal
+    # TODO(hvl): add flag for hiding code blocks
 
     args = parser.parse_args()
     params = args.__dict__
