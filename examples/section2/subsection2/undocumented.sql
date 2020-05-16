@@ -1,4 +1,3 @@
--- this is a basic file
 SELECT
   name,
   num,

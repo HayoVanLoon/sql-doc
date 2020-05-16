@@ -1,4 +1,4 @@
--- this is a basic file
+-- this is a basic file in section 2.1
 -- with multiple lines
 SELECT
   name,

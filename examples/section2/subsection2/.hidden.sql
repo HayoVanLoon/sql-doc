@@ -1,4 +1,4 @@
--- this is a basic file
+-- I'm hidden!
 SELECT
   name,
   num,

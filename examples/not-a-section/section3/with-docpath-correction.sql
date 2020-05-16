@@ -1,5 +1,5 @@
+-- this is a basic file with a docpath correction
 -- docpath: section3
--- this is a basic file
 SELECT
   name,
   num,

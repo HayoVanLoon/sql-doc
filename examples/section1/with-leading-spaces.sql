@@ -1,4 +1,4 @@
--- this is a basic file
+  -- this is a basic file with leading spaces
 SELECT
   name,
   num,

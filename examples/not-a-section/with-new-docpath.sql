@@ -1,5 +1,5 @@
--- docpath: free
--- this is a basic file with a docpath
+-- docpath= free
+-- this is a basic file with a new docpath
 SELECT
   name,
   num,

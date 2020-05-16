@@ -1,4 +1,4 @@
--- this is a basic file
+-- this is a root level file
 SELECT
   name,
   num,
