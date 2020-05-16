@@ -32,7 +32,8 @@ python3 sql-doc.py --src=examples --file_extension=.foo --out=examples/README.md
 ## Commenting Example
 Just add comments to the top of your query file.
 ```sql
--- Returns the current time in a convoluted way.
+-- Returns the current time.
+-- This is done in a convoluted way, but the reason is: 'meh'.
 SELECT 
   *
 -- this comment is initially ignored, but will show up in the code block.
