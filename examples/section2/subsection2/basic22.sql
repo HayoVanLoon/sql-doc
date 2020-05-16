@@ -1,4 +1,5 @@
 -- this is a basic file in section 2.2
+-- tags: animals.dogs
 SELECT
   name,
   num,

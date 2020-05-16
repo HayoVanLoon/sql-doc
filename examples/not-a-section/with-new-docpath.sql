@@ -1,5 +1,6 @@
 -- docpath= free
 -- this is a basic file with a new docpath
+-- tags: foods.fruits
 SELECT
   name,
   num,

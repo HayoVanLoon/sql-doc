@@ -1,6 +1,12 @@
 # SQL Doc
 
-A script for generating documentation from SQL file comments.
+A script for generating Markdown documentation from SQL file comments.
+
+It has been designed for simplicity; not influencing how you write your
+queries. It will only care for simple comments in the top of your SQL files.
+
+Special keywords have been kept to a minimum, so you can focus on writing good 
+comments, not memorising yet another set of keywords.
 
 Inspired by protoc-gen-doc (https://github.com/pseudomuto/protoc-gen-doc)
 
@@ -38,14 +44,25 @@ python3 sql-doc.py --src=examples --file_extension=.foo --out=examples/README.md
 - Each directory below the sources root (`src`) forms a section, iff there is
 at least one SQL file in it.
 - Subdirectories become subsections.
-- This behaviour is overridden with a special `docpath:` keyword (see below).
+- This behaviour is overridden with a special `docpath` keyword (see below).
 
 ### Special Keywords
-The aim is to limit special keywords to a minimum. This is to let writers focus on content, not keywords.
 
 #### docpath
 The `docpath` keyword overrides the section determination logic for the file.
-Example: `-- docpath: foo/bar` will place the file in the subsection `bar` of the section `foo`.
+
+Example: `-- docpath: foo/bar` will place the file in the subsection `bar` of 
+the section `foo`.
+
+#### tags
+The `tags` keyword allows for random, unstructured tagging. A common use would 
+be to tag the tables touched by the query. You can then trace table 
+dependencies. The keyword is to be followed with a comma-separated list (or a 
+single item).
+
+Example: `-- tags: foods.fruits, animals.dogs` will link the query with those 
+two tags and vice versa. 
+
 
 ## License
 Copyright 2020 Hayo van Loon
