@@ -193,7 +193,7 @@ def organise(sorted_docs: List[DocFile], level: int) -> Section:
 def markdown_index(current: Section, level: int = 0) -> str:
     buf = io.StringIO()
     if level == 0 and current.docs:
-        buf.write(f'- [general](ROOT)\n')
+        buf.write(f'- [general](#ROOT)\n')
     for section in current.sections:
         name = section.name()
         ref = DOCPATH_SPLIT_TOKEN.join(section.path())

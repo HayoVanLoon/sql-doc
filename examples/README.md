@@ -1,5 +1,5 @@
 # Query Documentation
-- [general](ROOT)
+- [general](#ROOT)
 - [free](#free)
 - [section1](#section1)
 - [section2](#section2)
