@@ -28,7 +28,7 @@ DOCPATH_SPLIT_TOKEN = '/'
 TAGS_TOKEN = 'tags'
 TAGS_REGEX = re.compile(r'\s*tags\s*[:= ]\s*(.+)')
 TAGS_SPLIT_TOKEN = ','
-TAG_LINK_PREFIX = '#TAG'
+TAG_LINK_PREFIX = 'TAG'
 ROOT = '.'
 TAGS_SECTION = 'TAGS_SECTION'
 
@@ -267,7 +267,7 @@ def markdown_doc(doc: DocFile, out_diff: int) -> str:
     if doc.tags:
         buf.write('\n\ntags:')
     for t in doc.tags:
-        buf.write(f' [{t}]({TAG_LINK_PREFIX}{t})')
+        buf.write(f' [{t}](#{TAG_LINK_PREFIX}{t})')
     if doc.code:
         buf.write('\n\n')
     for c in doc.code:
