@@ -64,7 +64,7 @@ class Section(object):
         self.sections = sections
 
     def name(self) -> str:
-        return '/'.join(self.path())
+        return self.path()[-1]
 
     def path(self) -> List[str]:
         s = self

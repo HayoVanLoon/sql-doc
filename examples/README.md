@@ -3,8 +3,8 @@
 - [free](#free)
 - [section1](#section1)
 - [section2](#section2)
-  - [section2/subsection1](#section2/subsection1)
-  - [section2/subsection2](#section2/subsection2)
+  - [subsection1](#section2/subsection1)
+  - [subsection2](#section2/subsection2)
 - [section3](#section3)
 
 <a name="ROOT"></a>
@@ -69,7 +69,7 @@ this is a basic file in section 2
     ])
 
 <a name="section2/subsection1"></a>
-#### section2/subsection1
+#### subsection1
 ###### multi-line.sql
 _[source](./../examples/section2/subsection1/multi-line.sql)_  
 this is a basic file in section 2.1  
@@ -86,7 +86,7 @@ with multiple lines
 
 
 <a name="section2/subsection2"></a>
-#### section2/subsection2
+#### subsection2
 ###### basic22.sql
 _[source](./../examples/section2/subsection2/basic22.sql)_  
 this is a basic file in section 2.2
