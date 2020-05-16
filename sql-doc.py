@@ -240,7 +240,7 @@ def markdown(current: Section, out_diff: int, level: int = 0) -> str:
         # Write section header
         for i in range(min(6, level + 2)):
             buf.write('#')
-        buf.write(f'{current.name()}')
+        buf.write(f' {current.name()}')
         buf.write('\n')
 
     for doc in current.docs:
