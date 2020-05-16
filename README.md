@@ -10,7 +10,7 @@ comments, not memorising yet another set of keywords.
 
 Inspired by protoc-gen-doc (https://github.com/pseudomuto/protoc-gen-doc)
 
-Requires Python 3; tested with 3.6.
+Requires Python 3; tested with 3.6. Tested with GitHub.
 
 ## Usage
 As simple as:
