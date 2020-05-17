@@ -20,18 +20,18 @@ Requires Python 3; tested with 3.6. Tested with GitHub.
 ## Usage
 As simple as:
 ```bash
-python3 sql-doc.py --src=examples --out=examples/README.md
+python3 sql-docq.py --src=examples --out=examples/README.md
 ```
 
 You can also write to stdout by leaving out the `out` parameter:
 ```bash
-python3 sql-doc.py --src=examples
+python3 sql-docq.py --src=examples
 ```
 
 By default, the script search for files ending in `.sql`.
 This can be overridden with (include the dot):
 ```bash
-python3 sql-doc.py --src=examples --file_extension=.foo --out=examples/README.md
+python3 sql-docq.py --src=examples --file_extension=.foo --out=examples/README.md
 ```
 
 ## Documenting Example
