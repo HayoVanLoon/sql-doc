@@ -29,9 +29,11 @@ python3 sql-docq.py --src=examples
 ```
 
 By default, the script search for files ending in `.sql`.
-This can be overridden with (include the dot):
+This can be overridden with:
 ```bash
-python3 sql-docq.py --src=examples --file_extension=.foo --out=examples/README.md
+python3 sql-docq.py --src=examples \
+    --file_extension=sql,query \
+    --out=examples/README.md
 ```
 
 ## Documenting Example

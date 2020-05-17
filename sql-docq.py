@@ -22,6 +22,7 @@ import re
 from typing import Dict, List, Optional, Set
 
 COMMENT_TOKEN = '--'
+EXT_REGEX = re.compile(r'.*\.([^.]+)')
 DOCPATH_TOKEN = 'docpath'
 DOCPATH_REGEX = re.compile(r'\s*docpath\s*[:= ]\s*(.+)')
 DOCPATH_SPLIT_TOKEN = '/'
@@ -142,11 +143,12 @@ def process_tags(line: str) -> Set[str]:
 
 def process_file(src: str,
                  path: str,
-                 ext: str,
+                 exts: List[str],
                  no_symlink: bool) -> Optional[DocFile]:
     if not filter_path(path, no_symlink):
         return None
-    if not path.endswith(ext):
+    ext = EXT_REGEX.findall(path)
+    if ext and ext[0] not in exts:
         return None
 
     file_path = path[len(src) + 1:].split(os.sep)
@@ -187,7 +189,10 @@ def process_file(src: str,
                    tags=tags)
 
 
-def process_dir(src: str, path: str, ext: str, no_symlink: bool) -> List[DocFile]:
+def process_dir(src: str,
+                path: str,
+                exts: List[str],
+                no_symlink: bool) -> List[DocFile]:
     if is_hidden(path):
         return []
 
@@ -195,9 +200,9 @@ def process_dir(src: str, path: str, ext: str, no_symlink: bool) -> List[DocFile
     for p in os.listdir(path):
         file = os.path.join(path, p)
         if os.path.isdir(file):
-            result.extend(process_dir(src, file, ext, no_symlink))
+            result.extend(process_dir(src, file, exts, no_symlink))
         else:
-            df = process_file(src, file, ext, no_symlink)
+            df = process_file(src, file, exts, no_symlink)
             if df:
                 result.append(df)
 
@@ -268,7 +273,7 @@ def markdown_doc(doc: DocFile, out_diff: int) -> str:
         buf.write('\n\n_undocumented_')
     if doc.tags:
         buf.write('\n\ntags:')
-    for t in doc.tags:
+    for t in sorted(doc.tags, key=lambda x: x):
         buf.write(f' [{t}](#{TAG_LINK_PREFIX}{t})')
     if doc.code:
         buf.write('\n\n')
@@ -331,8 +336,12 @@ def markdown(current: Section,
 def main(src: str, ext: str, out: str, no_symlink: bool = True):
     if not src.startswith(ROOT):
         src = ROOT + '/' + src
+    exts = []
+    for x in ext.split(','):
+        if x and x.strip():
+            exts.append(x.strip())
 
-    docs = process_dir(src, src, ext, no_symlink)
+    docs = process_dir(src, src, exts, no_symlink)
     sorted_docs = sorted(docs, key=lambda df: df.path())
 
     section = organise(sorted_docs, 0)
@@ -365,13 +374,14 @@ if __name__ == '__main__':
     )
     parser.add_argument(
         '--file_extension',
-        help='SQL file extension',
-        default='.sql'
+        help='SQL file extension. '
+             'Can be a comma-separated list to match multiple extensions.',
+        default='sql'
     )
     parser.add_argument(
         '--out',
-        help=('Output file, if left empty, writes to stdout.'
-              'Used in source file link generation as well.'),
+        help='Output file, if left empty, writes to stdout.'
+             'Used in source file link generation as well.',
         default=''
     )
     # TODO(hvl): add flag for allowing symlink traversal
