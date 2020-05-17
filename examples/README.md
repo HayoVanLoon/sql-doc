@@ -149,11 +149,14 @@ this is a basic file with a docpath correction
 
 <a name="TAGS_SECTION"></a>
 ## Tags
+
 <a name="TAGfoods.fruits"></a>
 ### foods.fruits
 [with-new-docpath.sql](#Li9leGFtcGxlcy9ub3QtYS1zZWN0aW9uL3dpdGgtbmV3LWRvY3BhdGguc3Fs)
 [multi-line.sql](#Li9leGFtcGxlcy9zZWN0aW9uMi9zdWJzZWN0aW9uMS9tdWx0aS1saW5lLnNxbA==)
+
 <a name="TAGanimals.dogs"></a>
 ### animals.dogs
 [multi-line.sql](#Li9leGFtcGxlcy9zZWN0aW9uMi9zdWJzZWN0aW9uMS9tdWx0aS1saW5lLnNxbA==)
 [basic22.sql](#Li9leGFtcGxlcy9zZWN0aW9uMi9zdWJzZWN0aW9uMi9iYXNpYzIyLnNxbA==)
+

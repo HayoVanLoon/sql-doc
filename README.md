@@ -1,9 +1,14 @@
-# SQL Doc
+# SQL Docq
 
-A script for generating Markdown documentation from SQL file comments.
+A script for generating (somewhat) structured Markdown documentation from 
+comments in a pile of SQL files.
 
-It has been designed for simplicity; not influencing how you write your
-queries. It will only care for simple comments in the top of your SQL files.
+The script will traverse directories recursively. It extracts comments from SQL 
+files, bundling them by location.   
+
+The script has been designed for simplicity. It does not require changing how 
+you write, format or structure your queries. It will hardly look at those; it
+only cares for simple comments at the top of your SQL files.
 
 Special keywords have been kept to a minimum, so you can focus on writing good 
 comments, not memorising yet another set of keywords.
@@ -29,11 +34,12 @@ This can be overridden with (include the dot):
 python3 sql-doc.py --src=examples --file_extension=.foo --out=examples/README.md
 ```
 
-## Commenting Example
+## Documenting Example
 Just add comments to the top of your query file.
 ```sql
 -- Returns the current time.
 -- This is done in a convoluted way, but the reason is: 'meh'.
+-- tags: useless-queries poor-examples
 SELECT 
   *
 -- this comment is initially ignored, but will show up in the code block.

@@ -318,9 +318,10 @@ def markdown(current: Section,
     if level == 0:
         if tags:
             buf.write(f'<a name="{TAGS_SECTION}"></a>\n')
-            buf.write('## Tags\n')
+            buf.write('## Tags\n\n')
         for t in tags:
             buf.write(markdown_tag(tags[t]))
+            buf.write('\n')
 
     return buf.getvalue()
 
