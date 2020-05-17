@@ -47,20 +47,6 @@ tags: [foods.fruits](#TAGfoods.fruits)
 
 <a name="section1"></a>
 ### section1
-<a name="Li9leGFtcGxlcy9zZWN0aW9uMS9iYXNpYy5xdWVyeQ=="></a>
-###### basic.query
-_[source](./../examples/section1/basic.query)_  
-this is a file with a different extension
-
-    SELECT
-      name,
-      num,
-    FROM UNNEST([
-      STRUCT('foo' AS name, 42 AS num),
-      STRUCT('bar' AS name, 3 AS num),
-      STRUCT('fubar' AS name, 666 AS num)
-    ])
-
 <a name="Li9leGFtcGxlcy9zZWN0aW9uMS93aXRoLWxlYWRpbmctc3BhY2VzLnNxbA=="></a>
 ###### with-leading-spaces.sql
 _[source](./../examples/section1/with-leading-spaces.sql)_  
