@@ -238,7 +238,7 @@ def get_tags(docs: List[DocFile]) -> Dict[str, Tag]:
 def markdown_index(current: Section, tags: Dict[str, Tag], level: int = 0) -> str:
     buf = io.StringIO()
     if level == 0 and current.docs:
-        buf.write(f'- [Root](#ROOT)\n\n')
+        buf.write(f'- [Root](#ROOT)\n')
     for section in current.sections:
         name = section.name()
         ref = DOCPATH_SPLIT_TOKEN.join(section.path())
@@ -294,7 +294,7 @@ def markdown(current: Section,
 
     if level == 0:
         # Write main header
-        buf.write('# Query Documentation\n')
+        buf.write('# Query Documentation\n\n')
         buf.write(markdown_index(current, tags, 0))
         buf.write('\n')
 

@@ -1,6 +1,6 @@
 # Query Documentation
-- [Root](#ROOT)
 
+- [Root](#ROOT)
 - [free](#free)
 - [section1](#section1)
 - [section2](#section2)
@@ -87,7 +87,7 @@ _[source](./../examples/section2/subsection1/multi-line.sql)_
 this is a basic file in section 2.1  
 with multiple lines
 
-tags: [animals.dogs](#TAGanimals.dogs) [foods.fruits](#TAGfoods.fruits)
+tags: [foods.fruits](#TAGfoods.fruits) [animals.dogs](#TAGanimals.dogs)
 
     SELECT
       name,
