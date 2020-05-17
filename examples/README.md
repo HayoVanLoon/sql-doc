@@ -1,5 +1,6 @@
 # Query Documentation
 - [Root](#ROOT)
+
 - [free](#free)
 - [section1](#section1)
 - [section2](#section2)
@@ -7,6 +8,8 @@
   - [subsection2](#section2/subsection2)
 - [section3](#section3)
 - [Tags](#TAGS_SECTION)
+  - [animals.dogs](#TAGanimals.dogs)
+  - [foods.fruits](#TAGfoods.fruits)
 
 <a name="ROOT"></a>
 <a name="Li9leGFtcGxlcy9yb290LnNxbA=="></a>
